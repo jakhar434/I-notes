@@ -8,7 +8,7 @@ const fetchuser = require('../middleware/fetchuser');
 router.get("/getnotes", fetchuser,
     async (req, res) => {
         const notes = await Note.find({ user: req.user.id });
-        res.json({ notes });
+        res.json(notes);
 
 
     });
@@ -47,7 +47,8 @@ router.post("/addnotes", fetchuser, [
 
 
     });
-// ROUTE 3(put request for update): UPDATE A NOTE api/auth/updatenote:id , id is given such that each note has a unique id and we have to update that particular id note
+// ROUTE 3(put request for update): UPDATE A NOTE api/auth/updatenote:id , id is given such that each note has a unique id and 
+//we have to update that particular id note.
 router.put("/updatenote/:id", fetchuser,
     async (req, res) => {
         try {
@@ -94,7 +95,7 @@ router.delete("/deletenote/:id", fetchuser,
             if (note.user.toString() !== req.user.id) {
                 return res.status(401).send("Not allowed");
             }
-            note = await Note.findByIdAndDelete(req.params.id,);
+            note = await Note.findByIdAndDelete(req.params.id);
             res.json({ success: "note has been deleted" });
         }
         catch (error) {

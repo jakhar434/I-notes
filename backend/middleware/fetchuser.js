@@ -7,7 +7,7 @@ const fetchuser = (req, res, next) => {
     // get the token from header
     const token = req.header('auth-token');
     if (!token) {
-        res.status(401).send({ error: "please authenticate using valid user" });
+        res.status(401).send({ error: "Please authenticate using valid user" });
     }
     try {
 

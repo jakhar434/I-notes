@@ -8,7 +8,12 @@ const { Router } = require("express");
 const JWT_secret = 'thisisrajatcode';
 const fetchuser = require('../middleware/fetchuser');
 
-//ROUTE:1  creating a user, /api/auth/createuser
+//use of express validator for validation 
+//use of bcrypt.js to convert password to hash password by generating salt and cahnged to salt hashed password
+// use of {jwt } is to generate a token when client login
+
+
+//ROUTE:1 POST METHOD--- creating a user, /api/auth/createuser
 router.post("/createuser",[
   body('name', 'enter a valid name').isLength({ min: 3 }),
   body('email', 'enter a valid email').isEmail(),
@@ -27,7 +32,7 @@ router.post("/createuser",[
     try {
       let user = await User.findOne({ email: req.body.email });
       if (user) {
-        return res.status(400).json({ error: " sorry, this email already exit" });
+        return res.status(400).json({ error: " sorry, This email already exit. try with another email" });
       }
 
 
@@ -79,13 +84,13 @@ router.post("/login",
 
       let user = await User.findOne({ email: req.body.email });
       if (!user) {
-        return res.status(400).json({ error: "please login with correct credentials" });
+        return res.status(400).json({ error: "Please login with correct credentials" });
       }
 
       // matching password of user and server
       const passcompare = await bcrypt.compare(req.body.password, user.password);
       if (!passcompare) {
-        return res.status(400).json({ error: "please login with correct credentials" });
+        return res.status(400).json({ error: "Please login with correct credentials" });
 
       }
       // if person entered correct credential then return a token
