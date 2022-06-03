@@ -72,7 +72,7 @@ router.put("/updatenote/:id", fetchuser,
             }
             // to update that note , means newnote is now set to that id
             note = await Note.findByIdAndUpdate(req.params.id, { $set: newnote }, { new: true });
-            res.json({ note });
+            res.json(note);
         }
         catch (error) {
             console.log(error.message);
