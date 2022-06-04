@@ -11,7 +11,7 @@ export const Noteitem = (props) => {
                 <div className="card-body">
                     <div className='d-flex align-items-center '>
                         <h5 className="card-title">{props.note.title}</h5>
-                        <i className="fas fa-trash-alt mx-2" onClick={() => { deletenote(props.note._id) }}></i>
+                        <i className="fas fa-trash-alt mx-2" onClick={() => { deletenote(props.note._id) ;  props.showalert("Note Deleted", "success")}}></i>
                         <i className="fas fa-user-edit mx-2" onClick={()=>{props.updatenote(props.note)}}></i>
                     </div>
                     <p className="card-text">{props.note.description}</p>

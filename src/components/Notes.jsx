@@ -4,7 +4,7 @@ import { Noteitem } from './Noteitem';
 import NoteContext from '../context/notes/noteContext';
 import { Addnote } from './Addnote';
 
-export default function Notes() {
+export default function Notes(props) {
     const context = useContext(NoteContext);
     const { notes, getNote, editnote } = context;
 
@@ -30,11 +30,12 @@ export default function Notes() {
         // console.log("updated note", note)
         editnote(note.id, note.etitle, note.edescription, note.etag)
         refclose.current.click();
+        props.showalert("Note Updated", "success")
 
     }
     return (
         <>
-            <Addnote />
+            <Addnote showalert={props.showalert}/>
             <button type="button" className="btn btn-primary d-none" ref={ref} data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
             </button>
@@ -81,7 +82,7 @@ export default function Notes() {
                     </div>
                     {notes.map((note) => {
                         return (
-                            <Noteitem key={note._id} updatenote={updatenote} note={note} />
+                            <Noteitem key={note._id} updatenote={updatenote} showalert={props.showalert} note={note} />
 
                         );
                     })}
