@@ -21,18 +21,19 @@ router.post("/createuser",[
 ],
 
   async (req, res) => {
+    let success= false;
 
     // if there is any error return that error
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({success, errors: errors.array() });
     }
 
     // checking if user exit and User is because we are exporting it
     try {
       let user = await User.findOne({ email: req.body.email });
       if (user) {
-        return res.status(400).json({ error: " sorry, This email already exit. try with another email" });
+        return res.status(400).json({ success, error: " sorry, This email already exit. try with another email" });
       }
 
 
@@ -53,7 +54,8 @@ router.post("/createuser",[
       }
       // generating a token using jwt.sign
       const authToken = jwt.sign(data, JWT_secret)
-      res.json({ authToken });
+      success= true;
+      res.json({ success,authToken });
     }
     catch (error) {
       console.log(error.message);
@@ -73,7 +75,7 @@ router.post("/login",
   body('password', 'enter a valid password').exists(),
 
   async (req, res) => {
-
+    let success = false;
     // if there is any error return that error
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -90,7 +92,8 @@ router.post("/login",
       // matching password of user and server
       const passcompare = await bcrypt.compare(req.body.password, user.password);
       if (!passcompare) {
-        return res.status(400).json({ error: "Please login with correct credentials" });
+        success= false;
+        return res.status(400).json({ success, error: "Please login with correct credentials" });
 
       }
       // if person entered correct credential then return a token
@@ -100,7 +103,8 @@ router.post("/login",
         }
       }
       const authToken = jwt.sign(data, JWT_secret);
-      res.json({ authToken });// es6 as {authToken:authToken}
+      success= true;
+      res.json({ success, authToken });// es6 as {authToken:authToken}
 
     } catch (error) {
       console.log(error.message);

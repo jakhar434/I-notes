@@ -1,49 +1,162 @@
 body {
   margin: 0;
-  padding :0;
- 
+  padding: 0;
+  /* overflow-x: hidden; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(250, 247, 244);
+  background-color: rgb(236, 234, 230);
+  /* background:  #60a3bc !important; */
+  
 }
-.navbarspan span{
+
+.navbarspan span {
   font-size: 35px;
   font-style: italic;
-  color:rgb(168, 10, 113);
+  color: rgb(168, 10, 113);
   font-weight: 900;
   font-family: 'Courier New', Courier, monospace;
 }
-.navbarspan{
-  font-size:25px;
-  font-style:italic;
+
+.navbarspan {
+  font-size: 25px;
+  font-style: italic;
   font-weight: 700;
-  color:rgb(156, 11, 105);
+  color: rgb(156, 11, 105);
   font-family: 'Courier New', Courier, monospace;
 }
-i{
+
+i {
   cursor: pointer;
 }
-.emojicss{
+
+.emojicss {
   font-size: 25px;
   animation: move 2s infinite;
   /* color:aquamarine; */
 }
-.navanimationcss{
-  animation:navmove 420ms ease-in;
+
+.navanimationcss {
+  animation: navmove 420ms ease-in;
 }
-@keyframes move{
-  0%{
+
+/* login component css */
+.logincomponent-css {
+  margin-top: 85px;
+
+}
+
+.user_card {
+  height: 400px;
+  width: 350px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #f39c12;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+
+}
+
+.brand_logo_container {
+  position: absolute;
+  height: 170px;
+  width: 170px;
+  top: -75px;
+  border-radius: 50%;
+  background: #60a3bc;
+  padding: 10px;
+  text-align: center;
+}
+
+.brand_logo {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.form_container {
+  margin-top: 100px;
+}
+
+.login_btn {
+  width: 100%;
+  background: #c0392b !important;
+  color: white !important;
+}
+
+.login_btn:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+
+.login_container {
+  padding: 0 2rem;
+}
+
+.input-group-text {
+  background: #c0392b !important;
+  color: white !important;
+  border: 0 !important;
+  border-radius: 0.25rem 0 0 0.25rem !important;
+}
+
+.input_user,
+.input_pass:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+  background-color: #c0392b !important;
+  ;
+}
+
+/* signup component */
+.gradient-custom-3 {
+  /* fallback for old browsers */
+  background: #84fab0;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+}
+
+.gradient-custom-4 {
+  /* fallback for old browsers */
+  background: #84fab0;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+}
+
+@keyframes move {
+  0% {
     transform: rotate(0deg);
   }
-  100%{
+
+  100% {
     transform: rotate(360deg);
   }
 }
-@keyframes navmove{
-  0%{
+
+@keyframes navmove {
+  0% {
     transform: translateY(-100%);
   }
-  100%{
+
+  100% {
     transform: translateY(0%);
   }
 }
