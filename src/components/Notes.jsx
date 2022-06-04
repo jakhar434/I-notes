@@ -1,18 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useContext } from 'react';
+import React, { useEffect, useRef, useState,useContext  } from 'react';
 import { Noteitem } from './Noteitem';
 import NoteContext from '../context/notes/noteContext';
 import { Addnote } from './Addnote';
+import { useNavigate } from 'react-router-dom';
 
 export default function Notes(props) {
+    let  history= useNavigate();
     const context = useContext(NoteContext);
     const { notes, getNote, editnote } = context;
-
-    useEffect(() => {
-        getNote();
-        // eslint-disable-next-line
-    }, [])
-
     const ref = useRef(null)
     const refclose = useRef(null);
     const [note, setNote] = useState({ id: "", etitle: "", edescription: "", etag: "" })
@@ -33,6 +28,17 @@ export default function Notes(props) {
         props.showalert("Note Updated", "success")
 
     }
+    useEffect(() => {
+        if(localStorage.getItem('token')){
+            console.log("token is there");
+            getNote()
+        }
+        else{
+            console.log("please log in");
+            history("/login");
+        }    
+         // eslint-disable-next-line
+    }, []);
     return (
         <>
             <Addnote showalert={props.showalert}/>

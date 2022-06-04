@@ -24,10 +24,10 @@ export const Login =  (props) => {
         console.log(json);
         if(json.success){
             // save the authtoken and redirect
-            localStorage.setItem("token", json.authtoken);
-            history("/");
+            localStorage.setItem('token', json.authToken);
             props.showalert("logged in successsfully", "success")
-
+            history("/");
+           
         }
         else{
             props.showalert("Invalid Credentials", "danger");
@@ -45,7 +45,7 @@ export const Login =  (props) => {
                             </div>
                         </div>
                         <div className="d-flex justify-content-center form_container">
-                            <form >
+                            <form onSubmit={handleclick} >
                                 <div className="input-group mb-3">
                                     <div className="input-group-append">
                                         <span className="input-group-text"><i className="fas fa-user"></i></span>
@@ -60,7 +60,7 @@ export const Login =  (props) => {
                                 </div>
 
                                 <div className="d-flex justify-content-center mt-3 login_container">
-                                    <button type="button" name="button" onClick={handleclick} className="btn login_btn">Login</button>
+                                    <button type="submit" name="button" className="btn login_btn">Login</button>
                                 </div>
                             </form>
                         </div>
