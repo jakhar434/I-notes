@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const router = require('../Routes/auth');
-const JWT_secret = 'thisisrajatcode';
+require('dotenv').config();
+const JWT_secret =process.env.REACT_APP_JWTSECRET ;
 
 const fetchuser = (req, res, next) => {
     // get the user from jwt token and fetch the id

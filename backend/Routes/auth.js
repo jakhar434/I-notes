@@ -5,13 +5,15 @@ const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { Router } = require("express");
-const JWT_secret = 'thisisrajatcode';
+require('dotenv').config();
+const JWT_secret = process.env.REACT_APP_JWTSECRET;
+
 const fetchuser = require('../middleware/fetchuser');
 
 //use of express validator for validation 
 //use of bcrypt.js to convert password to hash password by generating salt and cahnged to salt hashed password
 // use of {jwt } is to generate a token when client login
-
+// console.log(JWT_secret);
 
 //ROUTE:1 POST METHOD--- creating a user, /api/auth/createuser
 router.post("/createuser",[
