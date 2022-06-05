@@ -39,9 +39,12 @@ export default function Notes(props) {
         }    
          // eslint-disable-next-line
     }, []);
+    
     return (
         <>
+            
             <Addnote showalert={props.showalert}/>
+           
             <button type="button" className="btn btn-primary d-none" ref={ref} data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
             </button>
