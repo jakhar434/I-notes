@@ -1,11 +1,10 @@
-import React, { useEffect, useRef, useState,useContext  } from 'react';
+import React, { useEffect, useRef, useState, useContext } from 'react';
 import { Noteitem } from './Noteitem';
 import NoteContext from '../context/notes/noteContext';
 import { Addnote } from './Addnote';
 import { useNavigate } from 'react-router-dom';
-
 export default function Notes(props) {
-    let  history= useNavigate();
+    let history = useNavigate();
     const context = useContext(NoteContext);
     const { notes, getNote, editnote } = context;
     const ref = useRef(null)
@@ -29,22 +28,20 @@ export default function Notes(props) {
 
     }
     useEffect(() => {
-        if(localStorage.getItem('token')){
+        if (localStorage.getItem('token')) {
             console.log("token is there");
             getNote()
         }
-        else{
+        else {
             console.log("please log in");
             history("/login");
-        }    
-         // eslint-disable-next-line
+        }
+        // eslint-disable-next-line
     }, []);
-    
+
     return (
         <>
-            
-            <Addnote showalert={props.showalert}/>
-           
+            <Addnote showalert={props.showalert} />
             <button type="button" className="btn btn-primary d-none" ref={ref} data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
             </button>

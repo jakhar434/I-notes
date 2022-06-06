@@ -160,3 +160,120 @@ i {
     transform: translateY(0%);
   }
 }
+
+
+/* about page */
+.aboutbanner{
+  background-image: url("./noteb.jpg");
+  width:100%;
+  height:500px;
+  background-size: cover;
+  position: absolute;
+  left:0;
+  top:78.5px;
+  display:flex;
+  align-items: center;
+
+}
+.bannercontent{
+  margin-top:-30px;
+  padding:2%;
+  background-color: rgba(114, 56, 221, 0.8);
+  width: auto;
+  height:auto;
+  color:white;
+} 
+.about_img_content{
+  /* background-color: #84fab0; */
+  width:100%;
+  height:500px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position:absolute;
+  top:580px;
+  left:0;
+  flex-wrap: wrap;
+
+}
+.about_img_1 {
+  width:50%;
+  height:450px;
+  background-image: url("./lapabout.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+
+.about_img_2 {
+  width:40%;
+  height:450px;
+  /* background-color: greenyellow; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:10px;
+}
+.about-content{
+  width:100%;
+  height:500px;
+  position: absolute;
+  top: 1080px;
+  left:0;
+  /* background-color: #f39c12; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.about-content-1{
+  width:40%;
+  height:450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:10px;
+
+}
+.about-content-2{
+  width:40%;
+  height:450px;  
+}
+.about-content-2 img{
+  background-color: rgb(236, 234, 230);
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  width:100%;
+  height:450px;
+}
+@media only screen and (max-width:600px){
+  .about_img_content{
+    flex-direction: column-reverse;
+    height:auto;
+    margin-top: 30px;
+  }
+  .about_img_1{
+    
+    width:95%;
+    height:300px;
+  }
+  .about_img_2{
+    width:90%;
+  }
+  .about-content{
+    flex-direction: column;
+    height:auto;
+    margin-top:30px;
+    top:1350px;
+  }
+  .about-content-1{
+    width:90%;
+
+  }
+  .about-content-2{
+    width:95%;
+    height:300px;
+  }
+}
