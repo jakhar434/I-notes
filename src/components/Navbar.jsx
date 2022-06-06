@@ -1,23 +1,13 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
-import NoteContext from '../context/notes/noteContext';
-export function Navbar() {
-    const context = useContext(NoteContext);
-    const {userdetail, user } = context;
+export function Navbar() { 
     let location = useLocation();
     let history = useNavigate();// it is used to navigate 
     const handlelogout = () => {
         localStorage.removeItem("token");//remove the token from local storage
         history("/login");// redirect to login page
-
     }
-    useEffect(() => {
-        userdetail();
-        // eslint-disable-next-line 
-    }, [])
-
     return (
 
         <nav className="navbar navbar-expand-lg bg-dark navbar-dark navanimationcss" style={{position: "relative", zIndex: "2"}}>
@@ -41,29 +31,8 @@ export function Navbar() {
                         <form className="d-flex" role="search">
                             <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
                             <Link className="btn btn-primary mx-1" to="/signup" role="button">SignUp</Link>
-                        </form> :
-                        
-                            <div className="btn-group mx-3 d-flex ">
-                                <button type="button" className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                                  {user.name} &emsp;
-                                    <img
-                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhIga2phxp_pLiT5C1PqlR5CLCLG7Sq4i50A&usqp=CAU"
-                                        className="rounded-circle z-depth-0"
-                                        alt="avatar"
-                                        height="32px"
-                                    />
-                                </button>
-                                <ul className="dropdown-menu dropdown-menu-end dropdown-menu-lg-star">
-                                    <li><button className="dropdown-item"  disabled type="button" style={{color:"black"}}> Your Profile</button></li>
-                                    <li><button className="dropdown-item"  disabled type="button" style={{color:"blue"}}> Hii {user.name}!</button></li>
-                                    <li><button className="dropdown-item" disabled type="button" style={{color:"blue"}}>Email: {user.email}</button></li>
-                                    <li ><button className='btn btn-danger mx-3 my-3 ' onClick={handlelogout}>logout</button></li>
-                                </ul>
-                            </div>
-                        
-                    }
-
-                </div>
+                        </form> : <button className='btn btn-danger mx-3 my-3 ' onClick={handlelogout}>logout</button>}
+               </div>
             </div>
         </nav>
     );
