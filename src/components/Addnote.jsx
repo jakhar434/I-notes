@@ -30,9 +30,9 @@ export const Addnote = (props) => {
 
     return (
         <div>
-            <div className='container'>
-                <div className="btn-group mx-3 ">
-                    <button type="button" className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+            <div className='container' style={{marginTop:"2px"}}>
+                <div className="btn-group mx-3 dropend">
+                    <button type="button" className="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                          Hello {user.name} &emsp;
                         <img
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhIga2phxp_pLiT5C1PqlR5CLCLG7Sq4i50A&usqp=CAU"
@@ -51,7 +51,7 @@ export const Addnote = (props) => {
 
                 <div className="container" >
                     <div className="row">
-                        <div className="col-md-5 " style={{ marginTop: "50px" }}>
+                        <div className="col-md-5 " style={{ marginTop: "70px" }}>
                             <h1 className="display-1  respo" style={{ marginTop: "-20px", fontWeight: "bolder" }}><span style={{ color: "#9C27B0" }}>i</span>Notebook</h1>
                             <p className=" respo" style={{ fontSize: "1.6rem", fontWeight: "bold" }}>Your notebook on cloud - safe and secure</p>
                             <p className=" mt-2 respo" style={{ fontSize: "1.2rem" }}>An online web platform where you can create, edit, delete your notes privately and securely without any disturbance. For more info you can checkout our <Link to="/about">About Page</Link>  </p>
