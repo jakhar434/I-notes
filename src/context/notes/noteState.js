@@ -6,7 +6,7 @@ const NoteState = (props) => {
 
     const notetitle = [];
     const [notes, setNotes] = useState(notetitle);
-    const [user, setUser] = useState({ name: "" });
+    const [user, setUser] = useState({ name: "", email:"" });
     //user details
     const userdetail = async () => {
         const response = await fetch("http://localhost:5000/api/auth/getuser", {
@@ -20,7 +20,7 @@ const NoteState = (props) => {
         const json = await response.json();
 
         // console.log(json.name);
-        setUser({ name: json.name })
+        setUser({ name: json.name , email: json.email})
     }
     //getall notes 
     const getNote = async () => {

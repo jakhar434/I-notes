@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useContext } from 'react';
 import NoteContext from '../context/notes/noteContext';
 import { Link } from 'react-router-dom';
 import homeimg from "./homeimg.png";
 export const Addnote = (props) => {
     const context = useContext(NoteContext);
-    const { addNote, userdetail, user } = context;
+    const { addNote } = context;
 
     const [note, setNote] = useState({ title: "", description: "", tag: "" })
     const onChange = (e) => {
@@ -20,18 +20,13 @@ export const Addnote = (props) => {
         setNote({ title: "", description: "", tag: "" });
         props.showalert("Note Added", "success")
     }
-    useEffect(() => {
-        userdetail();
-        // eslint-disable-next-line 
-    }, [])
+    
 
 
     return (
         <div>
             <div className='container'>
-                <div className='container my-4'>
-                    <p>Hello {user.name}!</p>
-                </div>
+                
                 <div className="container" >
                     <div className="row">
                         <div className="col-md-5 " style={{marginTop:"50px"}}>

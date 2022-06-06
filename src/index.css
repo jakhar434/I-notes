@@ -248,6 +248,7 @@ i {
   width:100%;
   height:450px;
 }
+
 @media only screen and (max-width:600px){
   .about_img_content{
     flex-direction: column-reverse;
