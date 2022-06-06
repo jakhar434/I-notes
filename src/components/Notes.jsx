@@ -11,7 +11,7 @@ export default function Notes(props) {
     const refclose = useRef(null);
     const [note, setNote] = useState({ id: "", etitle: "", edescription: "", etag: "" })
     const onChange = (e) => {
-        // spreadoperator ...is says that keep the default value and overwrite it
+        // spreadoperator ...is says that keep the default value and overwrite it//
 
         setNote({ ...note, [e.target.name]: e.target.value })
 
