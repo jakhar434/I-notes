@@ -1,12 +1,27 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### iNotebook
+save your notes in the cloud.
+
+![Screenshot (1565)](https://user-images.githubusercontent.com/76389609/172290528-af3ad3a9-4744-4338-9a6d-f9431404768e.png)
+
+![Screenshot (1566)](https://user-images.githubusercontent.com/76389609/172290560-9d7036aa-f371-4e10-aebe-1acba96eac30.png)
+
+
+![Screenshot (1559)](https://user-images.githubusercontent.com/76389609/172290578-b128d35b-86d5-40a6-b13a-a1e63e5617fa.png)
+
+
+![Screenshot (1560)](https://user-images.githubusercontent.com/76389609/172290598-0b4cd702-3596-4602-92c5-38fa61b891d4.png)
+
+
+![Screenshot (1563)](https://user-images.githubusercontent.com/76389609/172290888-0d060f15-c51c-4c75-85ff-8a9cccaa084a.png)
+
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run both`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -39,32 +54,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
