@@ -55,7 +55,7 @@ export function About() {
 
                             <div className="profile_developer">
 
-                                <img src={myimg} className="rounded-circle" width="80" alt="" />
+                                <img src={myimg} className="rounded-circle" width="80" alt="myimg" />
 
                             </div>
 
@@ -70,6 +70,7 @@ export function About() {
                             <a href="https://github.com/jakhar434"><button className="btn btn-primary btn-sm follow">Follow</button></a>
                             <div className='container my-4 mx-4'>
                                 <div className='row'>
+                                
                                     <div className='col col-md-2'><a href="https://fb.com/rajat.jakhar.77"><i className="fa fa-facebook"></i></a></div>
                                     <div className='col col-md-2'><a href="https://www.instagram.com/p/CbCcqKsuRAfltfuOpIv8K6qopQZ4rJAOzOPut40/?igshid=YmMyMTA2M2Y="><i className="fa fa-instagram"></i></a></div>
                                     <div className='col col-md-2'><a href="https://linkedin.com/in/rajat-jakhar-885460213"><i className="fa fa-linkedin"></i></a></div>
