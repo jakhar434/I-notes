@@ -43,7 +43,7 @@ export const Addnote = (props) => {
                     </button>
                     <ul className="dropdown-menu dropdown-menu-end dropdown-menu-lg-star">
                         <li><button className="dropdown-item" disabled type="button" style={{ color: "black" }}> Your Profile</button></li>
-                        <li><button className="dropdown-item" disabled type="button" style={{ color: "blue" }}> {user.name}!</button></li>
+                        <li><button className="dropdown-item" disabled type="button" style={{ color: "blue" }}> {user.name}</button></li>
                         <li><button className="dropdown-item" disabled type="button" style={{ color: "blue" }}>Email: {user.email}</button></li>
 
                     </ul>
